@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Launcher Favorite List</title>
+  <link rel="stylesheet" type="text/css" href="<%="style.css"%>"/>
+</head>
+
+<body>
+  <h1>Launcher Favorite List</h1>
+<ul>
+<% @sites.each do |site| %>
+<li>  <%= site[:favorite] %> </li>
+<% end %>
+</ul>
+
+<form action="/favorites-list" method="post">
+  <label for="url">Add New Favorite Thing:</label>
+  <input type="url" id="url" name="url" required>
+
+  <input type="submit" value="Add">
+</form>
+
+</body>
+</html>
